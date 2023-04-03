@@ -1,6 +1,6 @@
 {
   "name": "input-mixer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Effortlessly mix and manage gamepad and keyboard inputs for your interactive apps and games",
   "repository": {
     "type": "git",
