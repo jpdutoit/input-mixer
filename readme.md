@@ -1,5 +1,9 @@
 # InputMixer
 
+![build status](https://img.shields.io/github/actions/workflow/status/jpdutoit/input-mixer/publish.yml)
+![gzipped size](https://img.shields.io/bundlephobia/minzip/input-mixer)
+![license](https://img.shields.io/npm/l/input-mixer)
+
 InputMixer is a small input listener library for games and interactive web applications. It allows you to create virtual buttons and axes that can be bound to actual buttons, keys, or axes from various input devices like gamepads and keyboards.
 
 ## Features:
