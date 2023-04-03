@@ -27,12 +27,12 @@ const input = new InputMixer();
 
 // Create a virtual jump button
 const jumpButton = input
-  .createButton("Jump");
+  .createButton("Jump")
   .bind(["KeySpace", "Gamepad0.Button0"]);
 
 // Create a virtual horizontal axis
 const horizontalAxis = input
-  .createAxis("Horizontal");
+  .createAxis("Horizontal")
   .withDeadZone(0.4)
   .bind(["-KeyA", "KeyD", "Gamepad0.Axis0"]);
 
@@ -55,7 +55,7 @@ function onFrame() {
 
 function onCleanup() {
   // Remove event listeners
-  stopListening()
+  stopListening();
 }
 ```
 
@@ -118,9 +118,8 @@ const invertedYAxis = input.find("-Gamepad0.Axis1");
 
 // Create horizontal axis using A and D keys
 const horizontalAxis = input
-  .createAxis("Horizontal");
+  .createAxis("Horizontal")
   .bind(["-ArrowLeft", "ArrowRight"]);
-
 ```
 
 ### Inverting a Button
@@ -132,9 +131,7 @@ To invert a button, meaning that the virtual button will count as pressed when t
 const invertedButton = input.find("!KeyS");
 
 // Bind the inverted button to a virtual button
-const toggleButton = input
-  .createButton("Toggle");
-  .bind(["!KeyS"]);
+const toggleButton = input.createButton("Toggle").bind(["!KeyS"]);
 ```
 
 ## API Reference
@@ -143,7 +140,7 @@ const toggleButton = input
 
 The main class that manages input devices and their state.
 
-Methods:
+#### Methods:
 
 - `createButton(id: string)`: Create a virtual button that can be bound to actual buttons/keys
 - `createAxis(id: string)`: Create a virtual axis that can be bound to actual axes/buttons/keys
