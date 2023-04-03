@@ -1,0 +1,23 @@
+{
+  "name": "input-mixer",
+  "version": "0.1.0",
+  "description": "Effortlessly mix and manage gamepad and keyboard inputs for your interactive apps and games",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpdutoit/input-mixer.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "typescript": "^5.0.0"
+  }
+}
