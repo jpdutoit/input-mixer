@@ -70,7 +70,6 @@ export class GamepadListener {
   listen() {
     const onConnected = (e: GamepadEvent) => {
       this.gamepads.get(e.gamepad.index).isConnected = true;
-      console.log(this.gamepads);
     };
     const onDisconnected = (e: GamepadEvent) => {
       const gamepadInfo = this.gamepads.get(e.gamepad.index);
