@@ -2,8 +2,8 @@ import { ConcreteAxis } from "../inputs/ConcreteAxis"
 import { ConcreteButton } from "../inputs/ConcreteButton"
 import { DefaultMap } from "../util"
 
-export type GamepadAxisId = `Gamepad${number}.Axis${number}` | `Axis${number}`
-export type GamepadButtonId = `Gamepad${number}.Button${number}` | `Button${number}`
+export type GamepadAxisId = `Gamepad${number | ""}.Axis${number}`;
+export type GamepadButtonId = `Gamepad${number | ""}.Button${number}`;
 
 export interface GamepadInfo {
   index: number
@@ -21,19 +21,22 @@ export class GamepadListener {
   /**
    * Find the named button or axis
    * */
-  find(id: string, defaultGamepad: number = 0): ConcreteAxis | ConcreteButton | undefined {
-    let [_, gamepadIndex, buttonOrAxis, _id] = id.match(
-      /^(?:Gamepad(\d+)\.)?(Button|Axis)?([^]*)$/
-    )!
+  find(
+    id: string,
+    defaultGamepad: number = 0
+  ): ConcreteAxis | ConcreteButton | undefined {
+    let [_, gamepadIndex, buttonOrAxis, index] = id.match(
+      /(?:^Gamepad(\d+)?\.(Button|Axis)(\d+)$)?/
+    )!;
 
     if (!buttonOrAxis) return
     if (!gamepadIndex) gamepadIndex = defaultGamepad.toString()
 
     const c = this.gamepads.get(+gamepadIndex)
     if (buttonOrAxis === "Button") {
-      return c.buttons.get(+_id)
+      return c.buttons.get(+index);
     } else if (buttonOrAxis === "Axis") {
-      return c.axes.get(+_id)
+      return c.axes.get(+index);
     }
   }
 

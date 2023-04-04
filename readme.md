@@ -91,7 +91,7 @@ For example:
 - `Gamepad0.Button0`: Button 0 on gamepad 0
 - `Gamepad0.Button1`: Button 1 on gamepad 0
 - `Gamepad1.Button0`: Button 0 on gamepad 1
-- `Button0`: Button 0 on the default gamepad
+- `Gamepad.Button0`: Button 0 on the default gamepad
 
 ### Gamepad axis IDs
 
@@ -104,7 +104,7 @@ For example:
 - `Gamepad0.Axis0`: Axis 0 on gamepad 0
 - `Gamepad0.Axis1`: Axis 1 on gamepad 0
 - `Gamepad1.Axis0`: Axis 0 on gamepad 1
-- `Axis0`: Axis 0 on the default gamepad
+- `Gamepad.Axis0`: Axis 0 on the default gamepad
 
 ## Modifiers
 
@@ -120,7 +120,7 @@ To invert the value of an axis, prefix the axis identifier with the `-` modifier
 // Invert the value of the "Gamepad0.Axis1" axis
 const invertedYAxis = input.find("-Gamepad0.Axis1");
 
-// Create horizontal axis using A and D keys
+// Create horizontal axis using left and right arrow keys
 const horizontalAxis = input
   .createAxis("Horizontal")
   .bind(["-ArrowLeft", "ArrowRight"]);
