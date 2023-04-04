@@ -32,7 +32,7 @@ const input = new InputMixer();
 // Create a virtual jump button
 const jumpButton = input
   .createButton("Jump")
-  .bind(["KeySpace", "Gamepad0.Button0"]);
+  .bind(["Space", "Gamepad0.Button0"]);
 
 // Create a virtual horizontal axis
 const horizontalAxis = input
